@@ -1,0 +1,24 @@
+From 0416a8a4927c1fa2808936d970a1f1d1f6232c92 Mon Sep 17 00:00:00 2001
+From: Scott K Logan <logans@cottsay.net>
+Date: Fri, 22 Mar 2024 20:42:47 -0500
+Subject: [PATCH] Install the package.xml manifest
+
+---
+ rpm/ros-rolling-iceoryx-posh.spec | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/rpm/ros-rolling-iceoryx-posh.spec b/rpm/ros-rolling-iceoryx-posh.spec
+index c05f49427d4a..91bc4ce1eb27 100644
+--- a/rpm/ros-rolling-iceoryx-posh.spec
++++ b/rpm/ros-rolling-iceoryx-posh.spec
+@@ -69,6 +69,7 @@ Library and middleware daemon (RouDi)
+ 
+ %install
+ %cmake_install
++install -m0644 -p -D package.xml %{buildroot}%{bloom_prefix}/share/%{pkg_name}/package.xml
+ 
+ 
+ %if 0%{?with_tests}
+-- 
+2.44.0
+
